@@ -1,0 +1,53 @@
+<%- include('partials/head', {title: title}) %>
+<%- include('partials/navMain') %>
+
+<!-- given: articles arr [6], title -->
+
+<body>
+    <div class="container mt-3">
+        <h1 class="display-4 text-center pb-3 pt-3"> Search the news database </h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <form class="d-flex" action="/search" method="get">
+                    <input class="form-control me-2" type="search" placeholder="Enter your keyword" aria-label="Search" name="q">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="display-4 text-center pb-4 pt-4"> Trending now in the US </h1>
+        <div class="card-group">
+            <% for (let i = 0; i < 3; i++) {%>
+                <%- include('partials/singleNews', {
+                    title: articles[i].title,
+                    description: articles[i].description,
+                    url: articles[i].url,
+                    urlToImage: articles[i].urlToImage,
+                    source: articles[i].source.name,
+                    publishedAt: articles[i].publishedAt
+                }); %>
+            <% } %>
+        </div>
+        <div class="card-group">
+            <% for (let i = 3; i < 6; i++) {%>
+                <%- include('partials/singleNews', {
+                    title: articles[i].title,
+                    description: articles[i].description,
+                    url: articles[i].url,
+                    urlToImage: articles[i].urlToImage,
+                    source: articles[i].source.name,
+                    publishedAt: articles[i].publishedAt
+                }); %>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <a href="/add-news" class="btn btn-primary btn-lg mt-5 mb-5"> Contribute your news </a>
+    </div>
+</body>
+</html>

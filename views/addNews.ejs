@@ -1,0 +1,27 @@
+<%- include('partials/head', {title: 'Add your news'}) %>
+<%- include('partials/navGeneral') %>
+
+<body>
+    <h1 class="display-4 text-center pt-4"> Contribute your news </h1>
+    <div class="container">
+        <form action="/add-news/add" method="post">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter article title">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" placeholder="Enter article description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="urlToImage">Image URL</label>
+                <input type="text" class="form-control" id="urlToImage" name="urlToImage" placeholder="Provide URL for the article image">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+
+
+
+</body>
+</html>

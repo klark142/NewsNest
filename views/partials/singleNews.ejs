@@ -1,0 +1,25 @@
+<!-- given: title, description, source, url, publishedAt, urlToImage -->
+
+<div class="card">
+    <% if (typeof urlToImage !== 'undefined' && urlToImage) { %>
+        <img src="<%= urlToImage %>" alt="">
+    <% } %>
+    <div class="card-body">
+        <% if (typeof title !== 'undefined' && title) { %>
+            <% title = title.split(' - ')[0]; %>
+            <h4 class="card-title"><%= title %></h4>
+        <% } %>
+        <% if (typeof source !== 'undefined' && source) { %>
+            <h6 class="card-subtitle mb-2 text-muted"><%= source %></h6>
+        <% } %>
+        <% if (typeof publishedAt !== 'undefined' && publishedAt) { %>
+            <h6 class="card-subtitle mb-2 text-muted"><%= publishedAt %></h6>
+        <% } %>
+        <% if (typeof description !== 'undefined' && description) { %>
+            <p class="card-text"><%= description %></p>
+        <% } %>
+        <% if (typeof url !== 'undefined' && url) { %>
+            <a href="<%= url %>" class="btn btn-primary">Read more</a>
+        <% } %>
+    </div>
+</div>
