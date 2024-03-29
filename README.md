@@ -28,9 +28,9 @@ Additionally, you will need a NewsAPI key to fetch news. You can obtain one by s
    ```
 3. Configure MongoDB
   Ensure MongoDB is running. The application is configured to connect to MongoDB at mongodb://127.0.0.1:27017/news, but you can change this in the index.js file if necessary.
-3. Start the application
+4. Start the application
 Run the application using the following command:
-```bash
-   node index.js
-   ```
+   ```bash
+      node index.js
+      ```
 The application should now be running and accessible at http://localhost:3000/.
